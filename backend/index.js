@@ -8,7 +8,7 @@ app.use(cors({
     origin: 'http://localhost:3000'
 })); //para aceitar requisição de outros domínios
 
-const PORT = '3101';
+//const PORT = '3101';
 
 const session = require('express-session')
 //cria uma sessão com as opções fornecidas
@@ -69,6 +69,4 @@ app.use((req, res) => {
 });
 
 //define a porta e a função callback a ser executada após o servidor iniciar
-app.listen(PORT, () => {
-    console.log(`Rodando na porta ${PORT}...`);
-});
+app.listen(process.env.PORT || 3000);
